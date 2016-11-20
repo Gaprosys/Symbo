@@ -1,0 +1,32 @@
+# Symbo
+
+Symbo is a language, designt to have characters, where 1 character have an specific function.
+It has a few methods from Brainfuck and I added a little bit of the mechanics of Assembly.
+The whole command list is,
+
+cmd   function
+----- ------------------
+<     Moves the data pointer a cell back
+>     Moves the data pointer a cell forward
++     Add 1 to the current cell
+-     Subtract 1 of the current cell
+.     Print value of the current cell
+,     Write character to the current cell
+:     Define jump mark. Example: I_am_a_functionname:++
+/     Jump Back to the last point, from where you last jumped
+|     Test the current cell with the safed value in an char. The default testing mode is equal. If the test result is true, they jump to the functionname, where's standing after this character
+~     Change the testing mode to bigger as. Is there the inverter symbol before, they would change the testing mode to smaller as
+!     Invert the current cell, if they is not the symbol to change the testing mode after this.
+=     Safe the content of the current cell in a char
+}     Jump to the functionname, where's standing after this character
+
+
+
+Example code:
+
+!=!loop:+.!~|loop
+
+This loops 255 times and give all single characters between 0 and 255 out.
+
+The same code in an different notation:
+!>loop:+.<=>!~|loop
