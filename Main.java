@@ -167,7 +167,7 @@ public class Main {
 		 * 
 		 * : = function
 		 * / = jump back
-		 * | = test and jump to, as default testing is equal, inv: not equal
+		 * | = test and jump to, as default testing is equal
 		 * ~ = bigger as, inv: smaller as
 		 * ! = inverter
 		 * = = safe field content for testing
