@@ -1,5 +1,3 @@
-package il;
-
 import java.io.*;
 import java.util.*;
 
@@ -72,30 +70,6 @@ public class Main {
 				try { cin = (char)is.read(); } catch (IOException e) {}
 				memory[memorypnt] = cin;
 				break;
-			/*case '[':
-				if(memory[memorypnt] == 0) {
-					loopCnt++;
-					while(i < code.length() && loopCnt > 0) {
-						i++;
-						if(code.charAt(i) == '[')
-							loopCnt++;
-						else if(code.charAt(i) == ']')
-							loopCnt--;
-					}
-				}
-				break;
-			case ']':
-				if(memory[memorypnt] != 0) {
-					loopCnt++;
-					while(i < code.length() && loopCnt > 0) {
-						i--;
-						if(code.charAt(i) == '[')
-							loopCnt--;
-						else if(code.charAt(i) == ']')
-							loopCnt++;
-					}
-				}
-				break;*/
 			case ':':
 				break;
 			case '/':
@@ -197,8 +171,6 @@ public class Main {
 			case '-':
 			case '.':
 			case ',':
-			//case '[':
-			//case ']':
 			case '/':
 			case '~':
 			case '!':
@@ -244,8 +216,6 @@ public class Main {
 				case '-':
 				case '.':
 				case ',':
-				//case '[':
-				//case ']':
 				case '/':
 				case '|':
 				case '~':
