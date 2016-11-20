@@ -34,14 +34,43 @@ public class Main {
 		for(int i = 0; i < memorylnt; i++)
 			memory[i] = 0;
 		
-		System.out.println("Bitte Code eingeben: ");
-		code = scan.nextLine();
-		
+		if(processArguments(args) == 1) {
+			return;
+		}
+				
 		clearCode();
 		
 		runCode();
 		
 		scan.close();
+	}
+	
+	private static int processArguments(String[] args) {
+		
+		if(args.length == 0) {
+			System.out.println("Bitte Code eingeben: ");
+			code = scan.nextLine();
+		} else {
+			for(int i = 0; i < args.length; i++) {
+				switch(args[i]) {
+				case "-f":
+				case "-F":
+					try {
+						Scanner fileScanner = new Scanner(new FileReader(args[(i+1)]));
+						while(fileScanner.hasNextLine()) {
+							code = code + fileScanner.nextLine();
+						}
+						i++;
+						fileScanner.close();
+					} catch (FileNotFoundException e) {
+						System.out.println(e.getMessage());
+						return 1;
+					}
+					break;
+				};
+			}
+		}
+		return 0;
 	}
 	
 	private static int runCode() {
