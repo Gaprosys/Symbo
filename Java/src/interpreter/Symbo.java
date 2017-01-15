@@ -1,4 +1,4 @@
-package interpreter;
+package il;
 
 import java.io.*;
 import java.util.*;
@@ -175,11 +175,6 @@ public class Symbo {
 		 * = = safe field content for testing
 		 * } = jump to
 		 * 
-		 * 
-		 * !!! Only a compiler instruction !!!
-		 * 
-		 * # = include
-		 * 
 		 * */
 			
 		return 0;
@@ -190,6 +185,7 @@ public class Symbo {
 		
 		String cleanCode;
 		String functionName;
+		
 		cleanCode = "";
 		functionName = "";
 		
@@ -216,9 +212,6 @@ public class Symbo {
 			case ':':
 				functionName = getFunctionName(i, true);
 				jumpMarks.put(functionName, (cleanCode.length()-1));
-			case '#':
-			default:
-				cleanCode = cleanCode + "";
 			};
 			
 		}
@@ -254,7 +247,6 @@ public class Symbo {
 				case '=':
 				case '}':
 				case ':':
-				case '#':
 				case ' ':
 					loopFunctionName = false;
 					break;
