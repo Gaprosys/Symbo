@@ -1,7 +1,8 @@
 # Symbo
 
-Symbo is a language, designt to have characters, where 1 character have an specific function.
+Symbo is a language, designed to have characters, where 1 character have an specific function.
 It has a few methods from Brainfuck and I added a little bit of the mechanics of Assembly.
+1 cell is 1 byte big.
 The whole command list is,
 
 cmd   function
